@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+							http://www.springframework.org/schema/beans/spring-beans.xsd
+							http://www.springframework.org/schema/context
+							http://www.springframework.org/schema/context/spring-context.xsd
+							http://www.springframework.org/schema/tx
+							http://www.springframework.org/schema/tx/spring-tx.xsd">
+	<!-- 配置数据库连接信息配置文件 jdbc.properties 文件路径 [BEGIN] -->
+	<!-- 配置数据库连接信息配置文件 jdbc.properties 文件路径 [END] -->
+
+	<!-- 配置 Spring 注解扫描基础包 [BEGIN] -->
+	<!-- 配置 Spring 注解扫描基础包 [END] -->
+
+	<!-- 配置数据连接 DataSource 信息 [BEGIN] -->
+	<!-- 配置数据连接 DataSource 信息 [END] -->
+
+	<!-- 配置 Spring 管理 Mybatis 核心对象 SQLSessionFactoryBean 信息 [BEGIN] -->
+	<!-- 配置 Spring 管理 Mybatis 核心对象 SQLSessionFactoryBean 信息 [END] -->
+
+	<!-- 配置 Mybatis 扫描数据持久层接口信息 [BEGIN] -->
+	<!-- 配置 Mybatis 扫描数据持久层接口信息 [END] -->
+
+	<!-- 配置使用 Spring 所提供的事务处理机制 [BEGIN] -->
+	<!-- 配置使用 Spring 所提供的事务处理机制 [END] -->
+
+	<!-- 配置使用注解的方式进行事务处理 [BEGIN] -->
+	<!-- 配置使用注解的方式进行事务处理 [END] -->
+</beans>
