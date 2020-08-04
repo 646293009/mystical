@@ -3,4 +3,49 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+	<!-- 设定 Spring 核心配置文件路径[BEGIN] -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			classpath*:/applicationContext.xml
+		</param-value>
+	</context-param>
+	<!-- 设定 Spring 核心配置文件路径[END] -->
+
+	<!-- 配置监听器用于监听 Tomcat 启动，加载和启动 Spring 核心容器[BEGIN] -->
+		<listener>
+			<listener-class>
+				org.springframework.web.context.ContextLoaderListener
+			</listener-class>
+		</listener>
+	<!-- 配置监听器用于监听 Tomcat 启动，加载和启动 Spring 核心容器[END] -->
+
+	<!-- 配置 Spring MVC 核心 Servlet[BEGIN] -->
+	<servlet>
+		<servlet-name>springmvc</servlet-name>
+		<servlet-class>
+			org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>springmvc</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	<!-- 配置 Spring MVC 核心 Servlet[END] -->
+
+	<!-- 配置 Spring MVC 提供的编码过滤器[BEGIN] -->
+	<filter>
+		<filter-name>characterEncodingFilter</filter-name>
+		<filter-class>
+			org.springframework.web.filter.CharacterEncodingFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>characterEncodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- 配置 Spring MVC 提供的编码过滤器[END] -->
+
+
 </web-app>
