@@ -1,4 +1,4 @@
-package cn.ekgc.mystical.base.util;
+package cn.ekgc.mystical.util;
 import java.security.MessageDigest;
 
 /**

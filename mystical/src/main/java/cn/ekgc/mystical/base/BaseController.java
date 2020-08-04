@@ -1,4 +1,5 @@
 package cn.ekgc.mystical.base;
 
-public class Note {
+public class BaseController {
+
 }
