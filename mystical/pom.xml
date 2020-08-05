@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>cn.ekgc.express</groupId>
-	<artifactId>express</artifactId>
+	<groupId>cn.ekgc.mystical</groupId>
+	<artifactId>mystical</artifactId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
 
@@ -18,27 +18,79 @@
 
 	<dependencies>
 		<!-- 配置 Spring MVC 依赖关系 [BEGIN] -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 		<!-- 配置 Spring MVC 依赖关系 [END] -->
 
 		<!-- 配置 Spring JDBC 依赖关系 [BEGIN] -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
 		<!-- 配置 Spring JDBC 依赖关系 [END] -->
 
 		<!-- 配置 MySQL 数据库驱动依赖关系 [BEGIN] -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.21</version>
+		</dependency>
 		<!-- 配置 MySQL 数据库驱动依赖关系 [END] -->
 
 		<!-- 配置 Mybatis 依赖关系 [BEGIN] -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+			<version>3.5.5</version>
+		</dependency>
 		<!-- 配置 Mybatis 依赖关系 [END] -->
 
 		<!-- 配置 Mybatis 和 Spring 结合的依赖关系 [BEGIN] -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+			<version>2.0.5</version>
+		</dependency>
 		<!-- 配置 Mybatis 和 Spring 结合的依赖关系 [END] -->
 
 		<!-- 配置 Druid 数据库连接池依赖关系 [BEGIN] -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.1.23</version>
+		</dependency>
 		<!-- 配置 Druid 数据库连接池依赖关系 [END] -->
 
 		<!-- 配置 JSON 转换依赖关系 [BEGIN] -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.11.1</version>
+		</dependency>
 		<!-- 配置 JSON 转换依赖关系 [END] -->
 
 		<!-- 配置 Servlet、JSP 和 JSTL 依赖关系 [BEGIN] -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>2.3.3</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
 		<!-- 配置 Servlet、JSP 和 JSTL 依赖关系 [END] -->
 
 		<dependency>

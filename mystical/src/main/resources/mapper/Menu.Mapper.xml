@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ekgc.mystical.dao.MenuDao">
+	<sql id="selectMenu" lang="">
+	select
+	m.id,
+	p.id parent_id,
+	p.name parent_name,
+	m.name ,
+	m.url,
+	m.icon
+	from
+ sys_menu m left join sys_menu p on m.parent_id=p.id join sys_role_menu rm on m.id=rm.menu_id
+	</sql>
+	<select id="findMenuListByRoleAndParent" parameterType="java.util.Map" resultMap="menuMap">
+	<include refid="selectMenu"/>
+ <where>
+	<trim suffixOverrides="and">
+		<if test="parent ==null">p.id is null and </if>
+		<if test="parent !=null">p.id=#{parent} and </if>
+		<if test="role !=null">rm.role_id=#{role} and </if>
+	</trim>
+ </where>
+	</select>
+	<select id="findMenuListByQuer" parameterType="Menu" resultMap="menuMap">
+		<include refid="selectMenu"/>
+			<where>
+			 <trim suffixOverrides="and">
+				 <if test="id !=null">m.id=#{id} and </if>
+				 <if test="parent !=null and parent.id !=null">p.id=#{parent.id} and </if>
+				<if test="name !=null">m.name=#{name} and </if>
+			 </trim>
+		 </where>
+	</select>
+ <insert id="saveMenu" parameterType="Menu">
+		insert into sys_menu(
+		<trim suffixOverrides=",">
+			<if test="parent !=null and parent.id !=null">parent_id,</if>
+			<if test="name !=null">name,</if>
+			<if test="url !=null">url,</if>
+			<if test="icon !=null">icon,</if>
+		</trim>
+		) values (
+	 <if test="parent !=null and parent.id !=null">#{parent.id},</if>
+	 <if test="name !=null">#{name},</if>
+	 <if test="url !=null">#{url},</if>
+	 <if test="icon !=null">#{icon},</if>
+	 )
+ </insert>
+
+	<update id="updateMenu" parameterType="Menu">
+		update sys_menu
+		<set>
+			<trim suffixOverrides=",">
+				<if test="parent !=null and parent.id !=null">parent_id=#{parent.id},</if>
+				<if test="name !=null">name=#{name},</if>
+				<if test="url !=null">url=#{url},</if>
+				<if test="icon !=null">icon={icon},</if>
+			</trim>
+		</set>
+		<where>
+			<trim suffixOverrides="and">
+				<if test="id !=null">id=#{id} and </if>
+			</trim>
+		</where>
+	</update>
+
+	<resultMap id="menuMap" type="Menu">
+			<id property="id" javaType="java.lang.Long" column="id"/>
+			<result property="name" javaType="java.lang.String" column="name"/>
+			<result property="url" javaType="java.lang.String" column="url"/>
+			<result property="icon" javaType="java.lang.String" column="icon"/>
+			<association property="parent" javaType="Menu">
+				<id property="id" javaType="java.lang.Long" column="parent_id"/>
+				<id property="name" javaType="java.lang.String" column="parent_name"/>
+			</association>
+		</resultMap>
+</mapper>
