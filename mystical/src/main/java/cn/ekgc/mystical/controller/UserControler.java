@@ -7,12 +7,10 @@ import cn.ekgc.mystical.util.MD5Util;
 import cn.ekgc.mystical.util.enums.StatusEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import sun.security.util.Password;
+
 
 /**
  * <b>用户模块控制器</b>
@@ -73,5 +71,4 @@ public class UserControler extends BaseController {
 	    	return "redirect:login?flag=empty";
 	    }
     }
-
 }

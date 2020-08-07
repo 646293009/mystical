@@ -7,6 +7,15 @@
 	<link rel="stylesheet" type="text/css" href="static/css/font-awesome.min.css">
 	<script type="application/javascript" src="static/js/jquery-3.5.1.min.js"></script>
 	<script type="application/javascript" src="static/js/bootstrap.min.js"></script>
+	<script type="application/javascript">
+		function openFrame(url) {
+			//使用 url 拼接iFrame 标签
+			 var iframe="<iframe src='" + url + "' width='100%' height='100%' style='border:0px;'></iframe>";
+			//找到对应的div 将 iframe 作为子节点进行插入
+			//alert(url);
+			$("#frameZone").html(iframe);
+		}
+	</script>
 </head>
 <body>
 <div class="container">
@@ -28,8 +37,8 @@
 										<b class="caret"></b>
 									</a>
 									<ul class="dropdown-menu">
-										<c:forEach var="child" items="${menu.childrenMenus }">
-											<li><a href="${child.url}">${child.name}</a></li>
+										<c:forEach var="child" items="${menu.childrenMenus}">
+											<li><a href="javascript:openFrame('${child.url}');">${child.name}</a></li>
 										</c:forEach>
 									</ul>
 								</li>
@@ -54,6 +63,11 @@
 					</div>
 				</div>
 			</nav>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12" id="frameZone">
+
 		</div>
 	</div>
 </div>

@@ -11,16 +11,16 @@ import java.util.Date;
  * */
 public class User  implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private Long id;        //主键
-	private String name; //用户姓名
-	private String cellphone; //手机号码
-	private String password; //登录密码
-	private Role role;        //角色用户信息
-	private String idCard;    //身份证号码
-	private String avatar;  //头像
-	private Integer status;  //用户状态：0-禁用，1-启用
-	private Date createTime;   //创建时间
-	private Date updateTime;   //修改时间
+	private Long id;        			 	 //主键
+	private String name; 				  	//用户姓名
+	private String cellphone;		     	//手机号码
+	private String password;             	//登录密码
+	private Role role;                    	//角色用户信息
+	private String idCard;              	//身份证号码
+	private String avatar;                 //头像
+	private Integer status;               //用户状态：0-禁用，1-启用
+	private Date createTime;              //创建时间
+	private Date updateTime;           	 //修改时间
 
 	public Long getId() {
 		return id;

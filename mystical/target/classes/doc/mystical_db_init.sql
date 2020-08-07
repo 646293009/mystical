@@ -28,7 +28,7 @@ insert into sys_menu(parent_id, name, url, icon) values(null, '运输管理', ''
 insert into sys_menu(parent_id, name, url, icon) values(null, '派送管理', '', '');
 insert into sys_menu(parent_id, name, url, icon) values(null, '历史记录', '', '');
 insert into sys_menu(parent_id, name, url, icon) values(1, '用户管理', '', '');
-insert into sys_menu(parent_id, name, url, icon) values(1, '角色管理', '', '');
+insert into sys_menu(parent_id, name, url, icon) values(1, '角色管理', 'role/index', '');
 insert into sys_menu(parent_id, name, url, icon) values(1, '我的信息', '', '');
 insert into sys_menu(parent_id, name, url, icon) values(2, '揽件管理', '', '');
 insert into sys_menu(parent_id, name, url, icon) values(3, '运输管理', '', '');
@@ -40,14 +40,15 @@ drop table if exists sys_role;
 create table sys_role(
     id int (10) not null auto_increment comment '主键',
     name varchar(255) comment '角色名称',
+    status int(2) comment '状态：0-禁用，1-启用',
     create_time timestamp not null default CURRENT_TIMESTAMP comment '创建时间',
     update_time timestamp not null default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP comment '修改时间',
     primary key(id)
 )Engine=InnoDB charset='utf8mb4' comment='系统角色表';
-insert into sys_role(name) values('管理员');
-insert into sys_role(name) values('揽件员');
-insert into sys_role(name) values('运输员');
-insert into sys_role(name) values('配送员');
+insert into sys_role(name,status) values('管理员', 1);
+insert into sys_role(name,status) values('揽件员', 1);
+insert into sys_role(name,status) values('运输员', 1);
+insert into sys_role(name,status) values('配送员', 1);
 
 -- 角色信息中间表：sys_role_menu
 drop table if exists sys_role_menu;

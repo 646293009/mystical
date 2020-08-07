@@ -3,9 +3,9 @@ package cn.ekgc.mystical.service;
 import cn.ekgc.mystical.pojo.entity.User;
 
 /**
- * <b>用户模块业务层</b>
- * @author asus
- * @version 1.0.0 2020-08-04
+ * <b>用户模块业务层接口</b>
+ * @author Dell
+ * @version 1.0.0 2020-08-06
  * @since 1.0.0
  *
  * */

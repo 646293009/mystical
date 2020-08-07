@@ -11,21 +11,21 @@ import java.util.Date;
  * */
 public class Express implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private Long id;            //主键
-	private String no;          //编号
-	private  String sendName;   //寄件人姓名
-	private String sendCellphone; //寄件人手机号
-	private  String sendAddress;  //寄件人联系地址
-	private  String receiveName;  //收件人姓名
-	private  String receiveCellphone; //收件人手机号码
-	private  String receiveAddress;   //收货人地址
-	private Date sendDate;          //寄件时间
-	private  Date beginTransportDate; //结束时间
-	private  Date deliveryDate;     //配送时间
-	private  Date receiveDate;       //收货时间
-	private  Integer status;        //快件状态：0-已揽件，1-开始运输，2-运输到达，3-快件配送，4-已收件
-	private Date createTime;   //创建时间
-	private Date updateTime;   //修改时间
+	private Long id;            			//主键
+	private String no;          			//编号
+	private  String sendName;   			//寄件人姓名
+	private String sendCellphone;			//寄件人手机号
+	private  String sendAddress;  			//寄件人联系地址
+	private  String receiveName;  			//收件人姓名
+	private  String receiveCellphone;	 	//收件人手机号码
+	private  String receiveAddress;   		//收货人地址
+	private Date sendDate;          		//寄件时间
+	private  Date beginTransportDate; 		//结束时间
+	private  Date deliveryDate;     		//配送时间
+	private  Date receiveDate;       		//收货时间
+	private  Integer status;        		//快件状态：0-已揽件，1-开始运输，2-运输到达，3-快件配送，4-已收件
+	private Date createTime;   				//创建时间
+	private Date updateTime;   				//修改时间
 
 	public Long getId() {
 		return id;

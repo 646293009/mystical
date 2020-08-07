@@ -14,15 +14,15 @@ import java.util.List;
 
 public class Menu implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private  Long id;            //菜单主键
-	private Menu parent;        //上级菜单
-	private String name;        //菜单名称
-	private  String url;        //链接地址
-	private  String icon;       //菜单图标
-	private List<Menu> childrenMenus;  //下拉菜单列表
-	private  List<Role> roleList ;    //该菜单所分配的角色列表
-	private Date createTime;   //创建时间
-	private Date updateTime;   //修改时间
+	private Long id;                        // 菜单主键
+	private Menu parent;                    // 上级菜单
+	private String name;                    // 菜单名称
+	private String url;                     // 连接地址
+	private String icon;                    // 菜单图标
+	private List<Menu> childrenMenus;       // 下级菜单列表
+	private List<Role> roleList;            // 该菜单所分配角色列表
+	private Date createTime;                // 创建时间
+	private Date updateTime;                // 修改时间
 
 	public Long getId() {
 		return id;

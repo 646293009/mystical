@@ -5,20 +5,19 @@ import java.util.Date;
 import java.util.List;
 
 /**
- * <b>角色信息</b>
- * @author asus
+ * <b>角色信息表</b>
+ * @author Arthur
  * @version 1.0.0 2020-08-04
  * @since 1.0.0
- *
- * */
-
+ */
 public class Role implements Serializable {
 	private static final long serialVersionUID = 1L;
-	private  Long id;           //主键
-	private  String name;       //角色名称
-	private List<Menu> menuList ; //角色拥有的菜单列表
-	private Date createTime;   //创建时间
-	private Date updateTime;   //修改时间
+	private Long id;                        // 主键
+	private String name;                    // 角色名称
+	private Integer status;                 // 状态：0-禁用，1-启用
+	private List<Menu> menuList;            // 角色拥有的菜单列表
+	private Date createTime;                // 创建时间
+	private Date updateTime;                // 修改时间
 
 	public Long getId() {
 		return id;
@@ -36,6 +35,22 @@ public class Role implements Serializable {
 		this.name = name;
 	}
 
+	public Integer getStatus() {
+		return status;
+	}
+
+	public void setStatus(Integer status) {
+		this.status = status;
+	}
+
+	public List<Menu> getMenuList() {
+		return menuList;
+	}
+
+	public void setMenuList(List<Menu> menuList) {
+		this.menuList = menuList;
+	}
+
 	public Date getCreateTime() {
 		return createTime;
 	}
@@ -50,13 +65,5 @@ public class Role implements Serializable {
 
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
-	}
-
-	public List<Menu> getMenuList() {
-		return menuList;
-	}
-
-	public void setMenuList(List<Menu> menuList) {
-		this.menuList = menuList;
 	}
 }
