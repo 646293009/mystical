@@ -16,7 +16,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-12" >
 					<button type="button">新增用户信息</button>
 				</div>
 			</div>
@@ -30,20 +30,18 @@
 							<th>电话号码</th>
 							<th>密码</th>
 							<th>身份证号码</th>
-							<th>用户头像</th>
 							<th>状态</th>
 							<th>操作</th>
 						</tr>
 						</thead>
 						<tbody>
-						<c:forEach var="user" items="${page.list}" varStatus="s">
+						<c:forEach var="role" items="${page.list}" varStatus="s">
 							<tr>
 								<td>${s.index + 1}</td>
 								<td>${user.name}</td>
 								<td>${user.cellphone}</td>
 								<td>${user.password}</td>
 								<td>${user.idCard}</td>
-								<td>${user.avatar}</td>
 								<td>
 									<c:choose>
 										<c:when test="${user.status == 1}">
@@ -61,10 +59,6 @@
 									</c:choose>
 								</td>
 								<td>
-									<a href="javascript:update('${user.id}')" class="btn btn-waring btn-xs">
-										<i class="fa fa-wrench"></i>&nbsp;
-										修改
-									</a>
 									<c:choose>
 										<c:when test="${user.status == 1}">
 											<a href="javascript:changeStatus('${user.id}', '0')" class="btn btn-danger btn-xs">
@@ -83,12 +77,16 @@
 										<i class="fa fa-hand-spock-o"></i>&nbsp;
 										授权
 									</a>
-									<a href="#">
-										<i class="fa fa-trash-o"></i>
+									<a href="javascript:update('${user.id}')" class="btn btn-waring btn-xs">
+										<i class="fa fa-wrench"></i>&nbsp;
+										修改
+									</a>
+									<a href="javascript:delete('${user.id}')" class="btn btn-waring btn-xs">
+										<i class="fa fa-trash-o"></i>&nbsp;
 										删除
 									</a>
-									<a href="#">
-										<i class="fa fa-share-alt-square"></i>
+									<a href="javascript:details('${user.id}')" class="btn btn-waring btn-xs">
+										<i class="fa fa-bars"></i>&nbsp;
 										详情
 									</a>
 								</td>
