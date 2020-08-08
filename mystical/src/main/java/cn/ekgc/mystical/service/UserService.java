@@ -1,6 +1,8 @@
 package cn.ekgc.mystical.service;
 
+import cn.ekgc.mystical.pojo.entity.Role;
 import cn.ekgc.mystical.pojo.entity.User;
+import cn.ekgc.mystical.pojo.vo.Page;
 
 /**
  * <b>用户模块业务层接口</b>
@@ -18,4 +20,11 @@ public interface UserService {
 	 *
 	 * */
 	User getUserByCellphone(String cellphone) throws Exception;
+	/**
+	 * <b>分页查询信息列表</b>
+	 * @param page
+	 * @return
+	 * @throws Exception
+	 */
+	Page<User> getListByPage(Page<User> page) throws Exception;
 }

@@ -4,7 +4,9 @@ import cn.ekgc.mystical.controller.base.BaseController;
 import cn.ekgc.mystical.pojo.entity.Menu;
 import cn.ekgc.mystical.pojo.entity.Role;
 import cn.ekgc.mystical.pojo.entity.User;
+import cn.ekgc.mystical.pojo.vo.Page;
 import cn.ekgc.mystical.service.MenuService;
+import cn.ekgc.mystical.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -23,21 +25,23 @@ import java.util.List;
 public class IndexController extends BaseController {
 	@Autowired
 	private MenuService menuService;
+	@Autowired
+	private UserService userService;
 	/**
 	 * <b>加载首页面</b>
 	 * @return
 	 * @throws Exception
 	 */
 	@GetMapping("/")
-	public String index(ModelMap map) throws Exception{
+	public String index(ModelMap map) throws Exception {
 		//获得当前登录用户
-		User user=(User) session .getAttribute("user");
-		if (user!=null){
+		User user = (User) session.getAttribute("user");
+		if (user != null) {
 			//用户已登录
 			//根据当前登录用户获得对应的角色
-			Role role=user.getRole();
+			Role role = user.getRole();
 			//根据角色获得对应的菜单功能
-			List<Menu> menuList=menuService.getMenuListForIndex(role);
+			List<Menu> menuList = menuService.getMenuListForIndex(role);
 			map.put("menuList", menuList);
 			return "index";
 		}

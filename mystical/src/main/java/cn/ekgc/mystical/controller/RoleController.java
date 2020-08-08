@@ -41,5 +41,4 @@ public class RoleController extends BaseController {
 		map.put("page", page);
 		return "role/role_index";
 	}
-
 }

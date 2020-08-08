@@ -28,7 +28,7 @@
 	<resultMap id="userMap" type="User">
 		<id property="id" javaType="java.lang.Long" column="id"/>
 		<result property="name" javaType="java.lang.String" column="name"/>
-		<result property="cellphone " javaType="java.lang.String" column="cellphone "/>
+		<result property="cellphone" javaType="java.lang.String" column="cellphone"/>
 		<result property="password" javaType="java.lang.String" column="password"/>
 		<result property="idCard" javaType="java.lang.String" column="id_card"/>
 		<result property="avatar" javaType="java.lang.String" column="avatar"/>

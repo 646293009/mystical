@@ -1,5 +1,6 @@
 package cn.ekgc.mystical.dao;
 
+import cn.ekgc.mystical.pojo.entity.Role;
 import cn.ekgc.mystical.pojo.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -23,4 +24,5 @@ public interface UserDao {
 	 *
 	 * */
 	List<User> findUserListByQuery(User query) throws Exception;
+
 }

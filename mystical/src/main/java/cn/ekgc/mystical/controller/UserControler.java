@@ -1,12 +1,15 @@
 package cn.ekgc.mystical.controller;
 
 import cn.ekgc.mystical.controller.base.BaseController;
+import cn.ekgc.mystical.pojo.entity.Role;
 import cn.ekgc.mystical.pojo.entity.User;
+import cn.ekgc.mystical.pojo.vo.Page;
 import cn.ekgc.mystical.service.UserService;
 import cn.ekgc.mystical.util.MD5Util;
 import cn.ekgc.mystical.util.enums.StatusEnum;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -34,7 +37,18 @@ public class UserControler extends BaseController {
 	@GetMapping("/login")
 	public  String forwardLoginPage() throws Exception{
 		return "user/user_login";
- }
+ 	}
+	@GetMapping("/users")
+	public String getUserusers(Integer pageNum, Integer pageSize, ModelMap map)
+			throws Exception {
+		// 通过 pageNum 和 pageSize 创建分页对象
+		Page<User> page = new Page<User>(pageNum, pageSize);
+		// 通过分页对象进行分页查询
+		page = userService.getListByPage(page);
+		// 转发到页面
+		map.put("page", page);
+		return "user/user_users";
+	}
 
 	/**
 	 * <b>用户登录</b>
