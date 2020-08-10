@@ -1,7 +1,6 @@
 package cn.ekgc.mystical.service.Impl;
 
 import cn.ekgc.mystical.dao.UserDao;
-import cn.ekgc.mystical.pojo.entity.Role;
 import cn.ekgc.mystical.pojo.entity.User;
 import cn.ekgc.mystical.pojo.vo.Page;
 import cn.ekgc.mystical.service.UserService;
@@ -49,8 +48,6 @@ public class UserServiceImpl implements UserService {
 	 * @return
 	 * @throws Exception
 	 */
-
-
 	@Override
 	public Page<User> getListByPage(Page<User> page) throws Exception {
 		// 使用 PageHelper 进行分页查询

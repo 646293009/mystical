@@ -45,6 +45,14 @@ public interface MenuDao {
 	 * @throws Exception
 	 */
 	Integer updateMenu(Menu menu) throws Exception;
+
+	/**
+	 * <b>根据角色主键查询其菜单列表</b>
+	 * @param id
+	 * @return
+	 * @throws Exception
+	 */
+	List<Menu> findMenuListByRole(Long id) throws Exception;
 }
 
 

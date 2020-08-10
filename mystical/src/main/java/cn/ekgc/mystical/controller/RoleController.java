@@ -8,7 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 /**
  * <b>角色模块控制器</b>
@@ -21,6 +24,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class RoleController extends BaseController {
 	@Autowired
 	private RoleService roleService;
+
+	/**
+	 * <b>截取添加用户请求进行请求分发到添加角色页面</b>
+	 * @return
+	 * @throws Exception
+	 */
+	@GetMapping("save")
+	public String save() throws Exception{
+
+		return "role/role_insert";
+	}
 
 	/**
 	 * <b>加载角色功能首页面</b>
@@ -39,6 +53,23 @@ public class RoleController extends BaseController {
 		page = roleService.getListByPage(page);
 		// 转发到页面
 		map.put("page", page);
+		return "role/role_index";
+	}
+
+	/**
+	 * <b>截取添加信息的请求进行</b>
+	 * @param role
+	 * @return
+	 * @throws Exception
+	 */
+	@PostMapping("/saveRole")
+	public String postRole(Role role) throws Exception{
+		boolean flag=roleService.saveRole(role);
+		if (flag){
+			System.out.println("保存成功！");
+		}else {
+			System.out.println("保存失败！");
+		}
 		return "role/role_index";
 	}
 }

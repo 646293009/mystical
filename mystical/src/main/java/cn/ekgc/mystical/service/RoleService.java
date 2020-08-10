@@ -3,6 +3,8 @@ package cn.ekgc.mystical.service;
 import cn.ekgc.mystical.pojo.entity.Role;
 import cn.ekgc.mystical.pojo.vo.Page;
 
+import java.util.List;
+
 /**
  * <b>角色模块业务层接口</b>
  * @author Dell
@@ -18,4 +20,11 @@ public interface RoleService {
 	 * @throws Exception
 	 */
 	Page<Role> getListByPage(Page<Role> page) throws Exception;
+
+	/**
+	 * <b>保存角色信息</b>
+	 * @return
+	 * @throws Exception
+	 */
+	boolean saveRole(Role role) throws Exception;
 }

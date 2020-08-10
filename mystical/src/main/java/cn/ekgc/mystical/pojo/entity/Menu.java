@@ -3,6 +3,7 @@ package cn.ekgc.mystical.pojo.entity;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * <b>菜单信息表</b>
@@ -94,5 +95,32 @@ public class Menu implements Serializable {
 
 	public void setUpdateTime(Date updateTime) {
 		this.updateTime = updateTime;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (o == this){
+			//此时两个对象的地址值相同，则两个对象相同
+			return true;
+		}
+
+		if (o == null){
+			return false;
+		}
+
+		if (o instanceof Menu){
+			//将Object 强制类型转换为 Menu
+			Menu menu=(Menu) o;
+			//判断两个菜单的 id 是否相同
+			if (menu.getId().equals(this.getId())){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
 	}
 }

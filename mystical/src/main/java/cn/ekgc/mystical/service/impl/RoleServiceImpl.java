@@ -46,4 +46,21 @@ public class RoleServiceImpl implements RoleService {
 		return page;
 	}
 
+
+
+	/**
+	 * <b>添加角色</b>
+	 * @return
+	 * @throws Exception
+	 */
+	@Override
+	public boolean saveRole(Role role) throws Exception {
+		int   count=roleDao.saveRole(role);
+		if (count>0){
+			return true;
+		}
+		return false;
+	}
+
+
 }

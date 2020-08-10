@@ -15,6 +15,7 @@ import java.util.List;
 public interface RoleDao {
 	/**
 	 * <b>根据查询对象查询列表信息</b>
+	 *
 	 * @param query
 	 * @return
 	 * @throws Exception
@@ -23,14 +24,16 @@ public interface RoleDao {
 
 	/**
 	 * <b>保存角色信息</b>
+	 *
 	 * @param role
 	 * @return
 	 * @throws Exception
 	 */
-	Integer saveRole(Role role) throws Exception;
+	int saveRole(Role role) throws Exception;
 
 	/**
 	 * <b>修改角色信息</b>
+	 *
 	 * @param role
 	 * @return
 	 * @throws Exception

@@ -7,6 +7,12 @@
 	<link rel="stylesheet" type="text/css" href="../static/css/font-awesome.min.css">
 	<script type="application/javascript" src="../static/js/jquery-3.5.1.min.js"></script>
 	<script type="application/javascript" src="../static/js/bootstrap.min.js"></script>
+	<script type="application/javascript">
+		function openAuthModal(url) {
+			//通过子页面调用父页面的JavaScript函数，可以通过对象parent
+			parent.openModal("角色授权",url);
+		}
+	</script>
 </head>
 	<body>
 		<div class="container">
@@ -17,7 +23,9 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<button type="button">新增角色信息</button>
+					<a href="save">
+						<button type="button">新增角色信息</button>
+					</a>
 				</div>
 			</div>
 			<div class="row">
@@ -71,7 +79,7 @@
 											</a>
 										</c:otherwise>
 									</c:choose>
-									<a href="javascript:auth('${role.id}', '1')" class="btn btn-info btn-xs">
+									<a href="javascript:openAuthModal('menu/auth?id=${role.id}')" class="btn btn-info btn-xs">
 										<i class="fa fa-hand-spock-o"></i>&nbsp;
 										授权
 									</a>

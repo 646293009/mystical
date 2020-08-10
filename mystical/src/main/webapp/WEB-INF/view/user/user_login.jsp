@@ -32,48 +32,48 @@
 		})
 	</script>
 </head>
-<body>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-12">
-				<h1>欢迎登录极迅快递管理平台</h1>
-				<input type="hidden" id="" value="${flag}"/>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>欢迎登录快递管理平台</h1>
+					<input type="hidden" id="" value="${flag}"/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<form action="login" method="post">
+						<table>
+							<tr>
+								<td align="right">
+									<i class="fa fa-mobile-phone"></i>&nbsp;
+									手机号码：
+								</td>
+								<td>
+									<input type="text" name="cellphone" class="form-control" style="width: 300px" placeholder="请填写手机号码">
+								</td>
+							</tr>
+							<tr>
+								<td align="right">
+									<i class="fa fa-lock"></i>&nbsp;
+									登录密码：
+								</td>
+								<td>
+									<input type="password" name="password" class="form-control" style="width: 300px" placeholder="请填写登录密码">
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" align="right">
+									<button type="submit" class="btn btn-success btn-sm" >
+									<i class="fa fa-sign-in "></i>&nbsp;
+										登录
+									</button>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<form action="login" method="post">
-					<table>
-						<tr>
-							<td align="right">
-								<i class="fa fa-mobile-phone"></i>&nbsp;
-								手机号码：
-							</td>
-							<td>
-								<input type="text" name="cellphone" class="form-control" style="width: 300px" placeholder="请填写手机号码">
-							</td>
-						</tr>
-						<tr>
-							<td align="right">
-								<i class="fa fa-lock"></i>&nbsp;
-								登录密码：
-							</td>
-							<td>
-								<input type="password" name="password" class="form-control" style="width: 300px" placeholder="请填写登录密码">
-							</td>
-						</tr>
-						<tr>
-							<td colspan="2" align="right">
-								<button type="submit" class="btn btn-success btn-sm" >
-								<i class="fa fa-sign-in "></i>&nbsp;
-									登录
-								</button>
-							</td>
-						</tr>
-					</table>
-				</form>
-			</div>
-		</div>
-	</div>
-</body>
+	</body>
 </html>

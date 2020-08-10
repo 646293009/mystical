@@ -13,6 +13,16 @@
 		from
 			sys_menu m left join sys_menu p on m.parent_id=p.id join sys_role_menu rm on m.id=rm.menu_id
 	</sql>
+
+	<select id="findMenuListByRole" parameterType="java.lang.Long" resultMap="menuMap">
+		<include refid="selectMenu"/>
+		<where>
+		<trim suffixOverrides="and">
+			<if test="id != null">rm.role_id=#{id} and </if>
+		</trim>
+		</where>
+	</select>
+
 	<select id="findMenuListByRoleAndParent" parameterType="java.util.Map" resultMap="menuMap">
 		<include refid="selectMenu"/>
 		<where>

@@ -2,6 +2,7 @@ package cn.ekgc.mystical.service;
 
 import cn.ekgc.mystical.pojo.entity.Menu;
 import cn.ekgc.mystical.pojo.entity.Role;
+import cn.ekgc.mystical.pojo.vo.Node;
 
 import java.util.List;
 
@@ -19,4 +20,10 @@ public interface MenuService {
 	 * @throws Exception
 	 */
 	List<Menu> getMenuListForIndex(Role role) throws Exception;
+
+	/**
+	 * <b>为授权准备所有的菜单列表</b>
+	 * @return
+	 */
+	List<Node> getMenuListForAuth(Long id) throws Exception;
 }
